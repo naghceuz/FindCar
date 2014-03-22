@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7061DA4318DDFE8900144FFA /* FCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7061DA4218DDFE8900144FFA /* FCTest.m */; };
 		7326595A18DD420800E09B88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7326595918DD420800E09B88 /* MapKit.framework */; };
 		7326595D18DD557C00E09B88 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7326595C18DD557C00E09B88 /* MainViewController.m */; };
 		73546B5D18DD882700F70588 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73546B5C18DD882700F70588 /* CoreLocation.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7061DA4118DDFE8900144FFA /* FCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTest.h; sourceTree = "<group>"; };
+		7061DA4218DDFE8900144FFA /* FCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTest.m; sourceTree = "<group>"; };
 		7326595918DD420800E09B88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7326595B18DD557C00E09B88 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7326595C18DD557C00E09B88 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				736BD17318DD153F0094D510 /* FCAppDelegate.h */,
 				736BD17418DD153F0094D510 /* FCAppDelegate.m */,
 				73BCA7E818DD16FD00E74143 /* Storyboard.storyboard */,
+				7061DA4118DDFE8900144FFA /* FCTest.h */,
+				7061DA4218DDFE8900144FFA /* FCTest.m */,
 				7326595B18DD557C00E09B88 /* MainViewController.h */,
 				7326595C18DD557C00E09B88 /* MainViewController.m */,
 				736BD17618DD153F0094D510 /* Images.xcassets */,
@@ -259,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7061DA4318DDFE8900144FFA /* FCTest.m in Sources */,
 				736BD17118DD153F0094D510 /* main.m in Sources */,
 				7326595D18DD557C00E09B88 /* MainViewController.m in Sources */,
 				736BD17518DD153F0094D510 /* FCAppDelegate.m in Sources */,
