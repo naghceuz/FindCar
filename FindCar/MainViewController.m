@@ -22,6 +22,8 @@
 
 @implementation MainViewController
 
+int x = 1;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,38 +65,30 @@
 
 // 这个非常重要，是版本0.1实现的关键，它是： a delegate method to get the current location
 //
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-	// Every time the LocationManager updates the location, it sends this message to its delegate, giving it the updated locations. The locations array contains all locations in chronological order, so the newest location is the last object in the array. That’s what you need and what the first line is taking from the array.
-	CLLocation *lastLocation = [locations lastObject];
-
-    
-    
-	// This line gets the horizontal accuracy and logs it to the console. This value is a radius around the current location. If you have a value of 50, it means that the real location can be in a circle with a radius of 50 meters around the position stored in lastLocation.
-
-	CLLocationAccuracy accuracy = [lastLocation horizontalAccuracy];
-	NSLog(@"Received location %@ with accuracy %f", lastLocation, accuracy);
-    
-	// The if statement checks if the accuracy is high enough for your purposes. I chose a value of 100 meters. It is good enough for this example and you don’t have to wait too long to achieve this accuracy. In a real app, you would probably want an accuracy of 10 meters or less, but in this case it could take a few minutes to achieve that accuracy (GPS tracking takes time).
-	if(accuracy < 100.0) {
-		//The first three lines zoom the MapView to the location.
-        //After that, you stop updating the location to save battery life.
-		MKCoordinateSpan span = MKCoordinateSpanMake(0.14, 0.14);
-		MKCoordinateRegion region = MKCoordinateRegionMake([lastLocation coordinate], span);
-        
-        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-        point.coordinate = lastLocation.coordinate;
-        point.title = @"Where am I?";
-        point.subtitle = @"I'm here!!!";
-        
-        [self.mapView addAnnotation:point];
-        
-		[_mapView setRegion:region animated:YES];
-        
-		// More code here
-        
-		[manager stopUpdatingLocation];
-	}
-}
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+//	// Every time the LocationManager updates the location, it sends this message to its delegate, giving it the updated locations. The locations array contains all locations in chronological order, so the newest location is the last object in the array. That’s what you need and what the first line is taking from the array.
+//	CLLocation *lastLocation = [locations lastObject];
+//
+//    
+//    
+//	// This line gets the horizontal accuracy and logs it to the console. This value is a radius around the current location. If you have a value of 50, it means that the real location can be in a circle with a radius of 50 meters around the position stored in lastLocation.
+//
+//	CLLocationAccuracy accuracy = [lastLocation horizontalAccuracy];
+//	NSLog(@"Received location %@ with accuracy %f", lastLocation, accuracy);
+//    
+//	// The if statement checks if the accuracy is high enough for your purposes. I chose a value of 100 meters. It is good enough for this example and you don’t have to wait too long to achieve this accuracy. In a real app, you would probably want an accuracy of 10 meters or less, but in this case it could take a few minutes to achieve that accuracy (GPS tracking takes time).
+//	if(accuracy < 100.0) {
+//		//The first three lines zoom the MapView to the location.
+//        //After that, you stop updating the location to save battery life.
+//		MKCoordinateSpan span = MKCoordinateSpanMake(0.14, 0.14);
+//		MKCoordinateRegion region = MKCoordinateRegionMake([lastLocation coordinate], span);
+//        
+//        
+//		// More code here
+//        
+//		[manager stopUpdatingLocation];
+//	}
+//}
 
 
 //- (void)viewWillAppear:(BOOL)animated {
@@ -123,10 +117,13 @@
     // Add an annotation
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = userLocation.coordinate;
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
+    point.title = @"Your car's location";
+//    point.subtitle = @"I'm here!!!";
     
-    [self.mapView addAnnotation:point];
+    if (x > 0) {
+        x--;
+        [self.mapView addAnnotation:point];
+    }
 }
 
 
