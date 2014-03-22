@@ -19,6 +19,8 @@
 		736BD18018DD153F0094D510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736BD16818DD153F0094D510 /* UIKit.framework */; };
 		736BD18818DD153F0094D510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 736BD18618DD153F0094D510 /* InfoPlist.strings */; };
 		736BD18A18DD153F0094D510 /* FindCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 736BD18918DD153F0094D510 /* FindCarTests.m */; };
+		73BCA7E918DD16FD00E74143 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BCA7E818DD16FD00E74143 /* Storyboard.storyboard */; };
+		73BCA7EA18DD16FD00E74143 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BCA7E818DD16FD00E74143 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		736BD18518DD153F0094D510 /* FindCarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FindCarTests-Info.plist"; sourceTree = "<group>"; };
 		736BD18718DD153F0094D510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		736BD18918DD153F0094D510 /* FindCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindCarTests.m; sourceTree = "<group>"; };
+		73BCA7E818DD16FD00E74143 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 			children = (
 				736BD17318DD153F0094D510 /* FCAppDelegate.h */,
 				736BD17418DD153F0094D510 /* FCAppDelegate.m */,
+				73BCA7E818DD16FD00E74143 /* Storyboard.storyboard */,
 				736BD17618DD153F0094D510 /* Images.xcassets */,
 				736BD16B18DD153F0094D510 /* Supporting Files */,
 			);
@@ -222,6 +226,7 @@
 			files = (
 				736BD16F18DD153F0094D510 /* InfoPlist.strings in Resources */,
 				736BD17718DD153F0094D510 /* Images.xcassets in Resources */,
+				73BCA7E918DD16FD00E74143 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				736BD18818DD153F0094D510 /* InfoPlist.strings in Resources */,
+				73BCA7EA18DD16FD00E74143 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +444,7 @@
 				736BD18F18DD153F0094D510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		736BD19018DD153F0094D510 /* Build configuration list for PBXNativeTarget "FindCarTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +453,7 @@
 				736BD19218DD153F0094D510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
