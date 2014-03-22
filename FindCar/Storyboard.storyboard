@@ -30,25 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19J-Ko-Cyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="771"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="eNx-kD-Vx5">
-            <objects>
-                <viewController id="5ZO-BW-7Qn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jKw-te-cym"/>
-                        <viewControllerLayoutGuide type="bottom" id="uKb-sw-PO2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dby-iP-G4H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IFK-z1-B1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-225" y="799"/>
+            <point key="canvasLocation" x="641" y="799"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jel-T2-CCd">
