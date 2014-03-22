@@ -12,7 +12,7 @@
 
 @interface MainViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+//@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
@@ -37,25 +37,27 @@
 {
     [super viewDidLoad];
     //用了这个function , 小蓝点就会显示
-    [self.mapView setShowsUserLocation:YES];
+//    [self.mapView setShowsUserLocation:YES];
+//    
+//    // Do any additional setup after loading the view.
+//    // 建立locationManger variable, 并且initial 它
+//    [self setLocationManager:[[CLLocationManager alloc] init]];
+//    
+//    // locationManager 一定要指向一个delegate. 这里因为它作用于 MainViewConrtoller， 所以call itself
+//	[_locationManager setDelegate:self];
+//    
+//    // 这里我选择用最优化的accuracy
+//    // 其实可以选 ： kCLLocationAccuracyBest   或者  kCLLocationAccuracyNearestTenMeters
+//    // 当然越精准会越耗电，所以要慎重.
+//	[_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+//   
+//    //这个function可能有用，逻辑还没想太清楚
+//    //[_locationManager setDistanceFilter:kCLDistanceFilterNone];
+//    
+//    // 开始启动这个location manager
+//	[_locationManager startUpdatingLocation];
     
-    // Do any additional setup after loading the view.
-    // 建立locationManger variable, 并且initial 它
-    [self setLocationManager:[[CLLocationManager alloc] init]];
-    
-    // locationManager 一定要指向一个delegate. 这里因为它作用于 MainViewConrtoller， 所以call itself
-	[_locationManager setDelegate:self];
-    
-    // 这里我选择用最优化的accuracy
-    // 其实可以选 ： kCLLocationAccuracyBest   或者  kCLLocationAccuracyNearestTenMeters
-    // 当然越精准会越耗电，所以要慎重.
-	[_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-   
-    //这个function可能有用，逻辑还没想太清楚
-    //[_locationManager setDistanceFilter:kCLDistanceFilterNone];
-    
-    // 开始启动这个location manager
-	[_locationManager startUpdatingLocation];
+    self.mapView.delegate = self;
 }
 
 
@@ -78,6 +80,13 @@
         //After that, you stop updating the location to save battery life.
 		MKCoordinateSpan span = MKCoordinateSpanMake(0.14, 0.14);
 		MKCoordinateRegion region = MKCoordinateRegionMake([lastLocation coordinate], span);
+        
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = lastLocation.coordinate;
+        point.title = @"Where am I?";
+        point.subtitle = @"I'm here!!!";
+        
+        [self.mapView addAnnotation:point];
         
 		[_mapView setRegion:region animated:YES];
         
@@ -106,7 +115,19 @@
 
 
 
-
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
+    // Add an annotation
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = userLocation.coordinate;
+    point.title = @"Where am I?";
+    point.subtitle = @"I'm here!!!";
+    
+    [self.mapView addAnnotation:point];
+}
 
 
 
